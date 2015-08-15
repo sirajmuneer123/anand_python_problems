@@ -1,0 +1,15 @@
+#Problem 19: Implement unix commands head and tail. The head and tail commands take a file as argument and prints its first and last 10 lines of the file respectively.
+import sys
+def head_tail(filename):
+	f=open(filename,'r+')
+	n_file=f.readlines()
+	if sys.argv[2]=="head":
+		n_file=n_file[:10]
+		for i in n_file:
+			print i,
+	if sys.argv[2]=="tail":
+		n_file=n_file[-10:]
+		for i in n_file:
+			print i,
+		
+head_tail(sys.argv[1])	
